@@ -24,7 +24,13 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', 'FrontOfficeController@accueil')->name('frontoffice.index');
 Route::resource('frontoffice','FrontOfficeController');//->except(['index']);
 // Nous trouver
-Route::get('contact', 'FrontOfficeController@contact');
-Route::post('envoi-formulaire', 'FrontOfficeController@envoiDemande');
+Route::get('contact', 'BackOfficeController@contact');
+Route::post('contact', 'BackOfficeController@store');
 // presentation
 Route::get('presentation', 'FrontOfficeController@presentation');
+//
+Route::get('test', function (){
+    return new \App\Mail\ContactMessage('ousmane','ousmanemoussathiam@gmail.com','emploi','je vous remercie');
+
+
+});

@@ -13,10 +13,7 @@ class FrontOfficeController extends Controller
 
         return view('frontoffice.index');
     }
-    public function contact()
-    {
-        return view('frontoffice.contact');
-    }
+
     public function presentation()
     {
         return view('frontoffice.presentation');
